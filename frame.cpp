@@ -522,7 +522,7 @@ void Frame::privateKeyImported()
 
 void Frame::mousePressEvent(QMouseEvent *event)
 {
-//    if( Hcash::getInstance()->notProduce)
+//    if( CTC::getInstance()->notProduce)
 //    {
 //        updateTimer();
 //    }
@@ -1148,14 +1148,14 @@ void Frame::jsonDataUpdated(QString id)
 
     if( id.mid(0,37) == "id_wallet_get_account_public_address-" )
     {
-//        QString  result = Hcash::getInstance()->jsonDataValue(id);
+//        QString  result = CTC::getInstance()->jsonDataValue(id);
 //        QString name = id.mid(37);
 
 //        if( result.mid(0,9) == "\"result\":")
 //        {
 //            QString address = result.mid(10);
 //            address.remove('\"');
-//            Hcash::getInstance()->addressMapInsert(name, address);
+//            CTC::getInstance()->addressMapInsert(name, address);
 
 //            refreshAccountInfo();
 //        }

@@ -21,7 +21,6 @@
 #include "control/rightclickmenudialog.h"
 #include "control/chooseaddaccountdialog.h"
 #include "dialog/renamedialog.h"
-#include "dialog/warningdialog.h"
 
 MainPage::MainPage(QWidget *parent) :
     QWidget(parent),
@@ -154,11 +153,11 @@ void MainPage::addAccount()
 //            if(result.mid(0,3) == ASSET_NAME)   // 创建账号成功
 //            {
 //                mutexForConfigFile.lock();
-//                Hcash::getInstance()->configFile->setValue( QString("/accountInfo/") + QString::fromLocal8Bit("账户") + toThousandFigure(size+1),name);
+//                CTC::getInstance()->configFile->setValue( QString("/accountInfo/") + QString::fromLocal8Bit("账户") + toThousandFigure(size+1),name);
 //                mutexForConfigFile.unlock();
-//                Hcash::getInstance()->balanceMapInsert( name, "0.00000 " + QString(ASSET_NAME));
-//                Hcash::getInstance()->registerMapInsert( name, "NO");
-//                Hcash::getInstance()->addressMapInsert( name, Hcash::getInstance()->getAddress(name));
+//                CTC::getInstance()->balanceMapInsert( name, "0.00000 " + QString(ASSET_NAME));
+//                CTC::getInstance()->registerMapInsert( name, "NO");
+//                CTC::getInstance()->addressMapInsert( name, CTC::getInstance()->getAddress(name));
 //            }
 
             if( result.mid(0,1) == "H")
@@ -228,7 +227,7 @@ void MainPage::updateAccountList()
             AssetBalanceMap map = CTC::getInstance()->accountBalanceMap.value(accountName);
             ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(getBigNumberString(map.value(assetIndex),info.precision)));
 
-    //        ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(Hcash::getInstance()->balanceMapValue(accountName).remove(ASSET_NAME)));
+    //        ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(CTC::getInstance()->balanceMapValue(accountName).remove(ASSET_NAME)));
             ui->accountTableWidget->item(rowNum,0)->setTextAlignment(Qt::AlignCenter);
             ui->accountTableWidget->item(rowNum,1)->setTextAlignment(Qt::AlignCenter);
             ui->accountTableWidget->item(rowNum,2)->setTextAlignment(Qt::AlignCenter);
@@ -267,7 +266,7 @@ void MainPage::updateAccountList()
 
             ContractBalanceMap map = CTC::getInstance()->accountContractBalanceMap.value(CTC::getInstance()->addressMap.value(accountName).ownerAddress);
             ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(getBigNumberString(map.value(contractAddress),info.precision)));
-    //        ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(Hcash::getInstance()->balanceMapValue(accountName).remove(ASSET_NAME)));
+    //        ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(CTC::getInstance()->balanceMapValue(accountName).remove(ASSET_NAME)));
             ui->accountTableWidget->item(rowNum,0)->setTextAlignment(Qt::AlignCenter);
             ui->accountTableWidget->item(rowNum,1)->setTextAlignment(Qt::AlignCenter);
             ui->accountTableWidget->item(rowNum,2)->setTextAlignment(Qt::AlignCenter);
@@ -452,9 +451,9 @@ void MainPage::jsonDataUpdated(QString id)
 
 void MainPage::updateTotalBalance()
 {
-//    Hcash::getInstance()->postRPC( toJsonFormat( "id_balance", "balance", QStringList() << "" ));
+//    CTC::getInstance()->postRPC( toJsonFormat( "id_balance", "balance", QStringList() << "" ));
 
-//    QString  result = Hcash::getInstance()->jsonDataValue("id_balance");
+//    QString  result = CTC::getInstance()->jsonDataValue("id_balance");
 
 //    double totalBalance = 0;
 //    int pos = result.indexOf("[[0,") + 4;
@@ -636,18 +635,6 @@ bool MainPage::eventFilter(QObject *watched, QEvent *e)
     return QWidget::eventFilter(watched,e);
 }
 
-void MainPage::showWarningDialog()
-{
-    if( CTC::getInstance()->firstUse)
-    {
-        CTC::getInstance()->firstUse = false;
-        CTC::getInstance()->configFile->setValue("settings/firstUse",false);
-
-        WarningDialog warningDialog;
-        warningDialog.pop();
-    }
-}
-
 
 void MainPage::showExportDialog(QString name)
 {
@@ -665,7 +652,7 @@ void MainPage::withdrawSalary(QString name, QString salary)
 //        commonDialog.setText( tr("Sure to withdraw your salary?"));
 //        if( commonDialog.pop())
 //        {
-//            Hcash::getInstance()->postRPC( toJsonFormat( "id_wallet_delegate_withdraw_pay", "wallet_delegate_withdraw_pay",
+//            CTC::getInstance()->postRPC( toJsonFormat( "id_wallet_delegate_withdraw_pay", "wallet_delegate_withdraw_pay",
 //                                                          QStringList() << name <<  name << QString::number(amount) ));
 //        }
 //    }

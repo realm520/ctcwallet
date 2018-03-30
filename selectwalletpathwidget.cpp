@@ -83,7 +83,7 @@ void SelectWalletPathWidget::paintEvent(QPaintEvent *)
     pen.setStyle(Qt::SolidLine);
     pen.setWidth(1);
     painter.setPen(pen);
-    painter.drawLine(QPoint(348,290),QPoint(575,290));
+    painter.drawLine(QPoint(348,340),QPoint(575,340));
 }
 
 void SelectWalletPathWidget::on_minBtn_clicked()

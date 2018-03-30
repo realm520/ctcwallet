@@ -406,9 +406,9 @@ void TransferPage::getAssets()
 
 //    int index = ui->assetComboBox->currentIndex();
 //    ui->assetComboBox->clear();
-//    foreach (int key, Hcash::getInstance()->assetInfoMap.keys())
+//    foreach (int key, CTC::getInstance()->assetInfoMap.keys())
 //    {
-//        ui->assetComboBox->addItem( Hcash::getInstance()->assetInfoMap.value(key).symbol);
+//        ui->assetComboBox->addItem( CTC::getInstance()->assetInfoMap.value(key).symbol);
 //    }
 
 //    if( index < 0 )   index = 0;

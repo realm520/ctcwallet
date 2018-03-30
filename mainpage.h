@@ -86,7 +86,6 @@ private:
     void updateTotalBalance();
     void updatePending();
     bool eventFilter(QObject *watched, QEvent *e);
-    void showWarningDialog();
 
 };
 

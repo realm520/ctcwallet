@@ -13,7 +13,7 @@ RenameDialog::RenameDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
+//    CTC::getInstance()->appendCurrentDialogVector(this);
     setParent(CTC::getInstance()->mainFrame);
 
     connect( CTC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
@@ -54,7 +54,7 @@ RenameDialog::RenameDialog(QWidget *parent) :
 RenameDialog::~RenameDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
+//    CTC::getInstance()->removeCurrentDialogVector(this);
 }
 
 void RenameDialog::on_okBtn_clicked()

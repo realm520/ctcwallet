@@ -12,7 +12,7 @@ AddContactDialog::AddContactDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
+//    CTC::getInstance()->appendCurrentDialogVector(this);
     setParent(CTC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -54,7 +54,7 @@ AddContactDialog::AddContactDialog(QWidget *parent) :
 AddContactDialog::~AddContactDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
+//    CTC::getInstance()->removeCurrentDialogVector(this);
 }
 
 void AddContactDialog::pop()
@@ -78,7 +78,7 @@ void AddContactDialog::jsonDataUpdated(QString id)
 {
 //    if( id != "id_blockchain_get_account")  return;
 
-//    QString result = Hcash::getInstance()->jsonDataValue( id);
+//    QString result = CTC::getInstance()->jsonDataValue( id);
 //    ui->gifLabel->hide();
 
 //    if( result == "\"result\":null")

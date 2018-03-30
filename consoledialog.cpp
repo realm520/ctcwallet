@@ -17,7 +17,7 @@ ConsoleDialog::ConsoleDialog(QWidget *parent) :
     DLOG_QT_WALLET_FUNCTION_BEGIN;
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
+//    CTC::getInstance()->appendCurrentDialogVector(this);
 //    setParent(UBChain::getInstance()->mainFrame);
 
 //    setAttribute(Qt::WA_TranslucentBackground, true);
@@ -57,8 +57,8 @@ ConsoleDialog::~ConsoleDialog()
 {
     DLOG_QT_WALLET_FUNCTION_BEGIN;
     qDebug() << "ConsoleDialog delete";
-//    Hcash::getInstance()->currentDialog = NULL;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
+//    CTC::getInstance()->currentDialog = NULL;
+//    CTC::getInstance()->removeCurrentDialogVector(this);
     delete ui;
     DLOG_QT_WALLET_FUNCTION_END;
 }

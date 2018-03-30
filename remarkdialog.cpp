@@ -13,7 +13,7 @@ RemarkDialog::RemarkDialog(QString address, QWidget *parent) :
     DLOG_QT_WALLET_FUNCTION_BEGIN;
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
+//    CTC::getInstance()->appendCurrentDialogVector(this);
     setParent(CTC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -39,7 +39,7 @@ RemarkDialog::RemarkDialog(QString address, QWidget *parent) :
 RemarkDialog::~RemarkDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
+//    CTC::getInstance()->removeCurrentDialogVector(this);
 }
 
 void RemarkDialog::pop()

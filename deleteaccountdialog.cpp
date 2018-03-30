@@ -15,7 +15,7 @@ DeleteAccountDialog::DeleteAccountDialog(QString name , QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
+//    CTC::getInstance()->appendCurrentDialogVector(this);
     setParent(CTC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -67,21 +67,21 @@ void DeleteAccountDialog::on_okBtn_clicked()
 //    if( ui->pwdLineEdit->text().isEmpty()) return;
 
 //    QString str = "wallet_check_passphrase " + ui->pwdLineEdit->text() + "\n";
-//    Hcash::getInstance()->write( str);
-//    QString result = Hcash::getInstance()->read();
+//    CTC::getInstance()->write( str);
+//    QString result = CTC::getInstance()->read();
 
 //    if( result.mid(0,4) == "true")
 //    {
 
-//        Hcash::getInstance()->write( "wallet_account_delete " + accountName + "\n");
-//        QString result = Hcash::getInstance()->read();
+//        CTC::getInstance()->write( "wallet_account_delete " + accountName + "\n");
+//        QString result = CTC::getInstance()->read();
 
 //        if( result.mid(0,4) == "true")
 //        {
-//            Hcash::getInstance()->deleteAccountInConfigFile( accountName);
-//            Hcash::getInstance()->addressMapRemove( accountName);
-//            Hcash::getInstance()->balanceMapRemove( accountName);
-//            Hcash::getInstance()->registerMapRemove( accountName);
+//            CTC::getInstance()->deleteAccountInConfigFile( accountName);
+//            CTC::getInstance()->addressMapRemove( accountName);
+//            CTC::getInstance()->balanceMapRemove( accountName);
+//            CTC::getInstance()->registerMapRemove( accountName);
 
 //        }
 

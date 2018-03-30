@@ -57,12 +57,12 @@ AssetPage::~AssetPage()
 void AssetPage::updateAssetInfo()
 {
 //    ui->assetInfoTableWidget->setRowCount(0);
-//    ui->assetInfoTableWidget->setRowCount(Hcash::getInstance()->assetInfoMap.size());
-//    foreach (int id, Hcash::getInstance()->assetInfoMap.keys())
+//    ui->assetInfoTableWidget->setRowCount(CTC::getInstance()->assetInfoMap.size());
+//    foreach (int id, CTC::getInstance()->assetInfoMap.keys())
 //    {
 //        ui->assetInfoTableWidget->setRowHeight(id,45);
 
-//        AssetInfo info = Hcash::getInstance()->assetInfoMap.value(id);
+//        AssetInfo info = CTC::getInstance()->assetInfoMap.value(id);
 
 //        ui->assetInfoTableWidget->setItem(id,0,new QTableWidgetItem(QString::number(id)));
 //        ui->assetInfoTableWidget->setItem(id,1,new QTableWidgetItem(info.symbol));

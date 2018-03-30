@@ -19,7 +19,7 @@ ExportDialog::ExportDialog( QString name, QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
+//    CTC::getInstance()->appendCurrentDialogVector(this);
     setParent(CTC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -50,7 +50,7 @@ ExportDialog::ExportDialog( QString name, QWidget *parent) :
 ExportDialog::~ExportDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
+//    CTC::getInstance()->removeCurrentDialogVector(this);
 }
 
 void ExportDialog::pop()

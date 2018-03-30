@@ -76,7 +76,7 @@ SetDialog::SetDialog(QWidget *parent) :
     qDebug() << "transactionFee: " << CTC::getInstance()->transactionFee;
     ui->feeLineEdit->setText(QString::number(float_t(CTC::getInstance()->transactionFee) / CTC::getInstance()->assetInfoMap.value(0).precision));
 
-    QRegExp rx("^(\\d+)(?:\\.\\d{0,4})?$|(^\\t?$)");
+    QRegExp rx("^(\\\d+)(?:\\.\\d{0,4})?$|(^\\t?$)");
     QRegExpValidator *pReg = new QRegExpValidator(rx, this);
     ui->feeLineEdit->setValidator(pReg);
 
@@ -425,7 +425,7 @@ void SetDialog::jsonDataUpdated(QString id)
             if( errorMessage == "invalid fee")
             {
                 CommonDialog commonDialog(CommonDialog::OkOnly);
-                commonDialog.setText( tr("The fee should not be 0!"));
+                commonDialog.setText( tr("The fee should not be lower than 0.01 %1!").arg(ASSET_NAME));
                 commonDialog.pop();
             }
             else

@@ -8,7 +8,7 @@ EditRemarkDialog::EditRemarkDialog(QString remark, QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
+//    CTC::getInstance()->appendCurrentDialogVector(this);
     setParent(CTC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -30,7 +30,7 @@ EditRemarkDialog::EditRemarkDialog(QString remark, QWidget *parent) :
 EditRemarkDialog::~EditRemarkDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
+//    CTC::getInstance()->removeCurrentDialogVector(this);
 }
 
 void EditRemarkDialog::on_okBtn_clicked()

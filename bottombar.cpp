@@ -125,6 +125,6 @@ void BottomBar::refresh()
 
     CTC::getInstance()->postRPC( toJsonFormat( "id_blockchain_list_assets", "blockchain_list_assets", QStringList() << ""));
 
-//    Hcash::getInstance()->postRPC( toJsonFormat( "id_balance", "balance", QStringList() << ""));
+//    CTC::getInstance()->postRPC( toJsonFormat( "id_balance", "balance", QStringList() << ""));
 
 }
