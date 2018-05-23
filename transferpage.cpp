@@ -220,7 +220,7 @@ void TransferPage::on_sendBtn_clicked()
 
                 CTC::getInstance()->postRPC( toJsonFormat( "id_wallet_transfer_to_address_" + accountName, "wallet_transfer_to_address",
                                                              QStringList() << ui->amountLineEdit->text() << info.symbol << accountName
-                                                             << ui->sendtoLineEdit->text() << remark ));
+                                                             << ui->sendtoLineEdit->text() << "" << remark ));
             }
             else
             {
